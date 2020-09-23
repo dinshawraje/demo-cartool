@@ -1,0 +1,22 @@
+.blackBg{
+    background-color: black;
+}
+.side-menu ul{
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+.side-menu li {
+    padding: 10px !important;
+}
+.side-menu nav {
+    max-width: 300px  !important;
+}
+.side-menu .custom-style {
+    padding: .5rem 1rem;
+}
+.side-menu .sign-up{
+    float: right;
+}
+.side-menu .col:hover {
+    background-color: #FFFF00	;
+}
