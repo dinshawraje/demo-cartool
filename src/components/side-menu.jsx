@@ -11,9 +11,13 @@ export const SideMenuBar = (props) => {
     if (token == null) {
       loggedIn = false
     }
+    let url="/logout";
+    let element=<p>No handle exists for this user!</p>;
+    if(loggedIn) element=<a href={url} className='btn btn-danger'>Logout</a>;
+  
 
     const navItems = [
-      <div class='custom-style row'>
+      <div className='custom-style row'>
         <Col><Link to="/signin" onClick={() => setShowNav(false)} >SignIn</Link></Col>
         <Col><Link to="/signup" onClick={() => setShowNav(false)} >SignUp</Link></Col>
       </div>,
@@ -40,6 +44,9 @@ export const SideMenuBar = (props) => {
         <Navbar bg="dark" expand="lg" className="side-menu">
 
           <MenuIcon onClick={() => setShowNav(true)} />{' '}
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text> {element} </Navbar.Text>
+          </Navbar.Collapse>
 
           <SideNav
             showNav={showNav}

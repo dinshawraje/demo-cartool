@@ -87,14 +87,10 @@ class ServiceForm extends React.Component {
   };
   submitForm = (event) => {
     event.preventDefault();
-    let data = this.state.newUser;
+    let data = this.state;
     console.log('Data fetch submitted' + JSON.stringify(data))
-    this.props.dispatch({
-      type: 'ADD_SERVICE',
-      data,
-    });
     this.props.history.push({
-      pathname: '/accountinfo/'+[data.accountName],
+      pathname: '/accountinfo',
       state: { detail: data }
     })
     // console.log('A form was submitted: ' + JSON.stringify(this.state));
